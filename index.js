@@ -2,8 +2,6 @@ const adviceId = document.querySelector('#adviceID')
 const adviceContent = document.querySelector('#adviceContent')
 const randomBtn = document.querySelector('#randomBtn')
 
-setRandomAdvice()
-
 async function setRandomAdvice() {
     let res = await fetch('https://api.adviceslip.com/advice').then((resp) => resp.json())
 
@@ -11,4 +9,5 @@ async function setRandomAdvice() {
     adviceContent.innerHTML = res.slip.advice
 }
 
+setRandomAdvice()
 randomBtn.addEventListener('click', setRandomAdvice)
